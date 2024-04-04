@@ -28,8 +28,6 @@ CREATE TABLE dim_ship_mode (
     ship_Mode VARCHAR(255) NULL,
     timestamp datetime
 );
-
--- dimension fechas, se carga desde un csv
 CREATE TABLE dim_date (
     date_key INT NOT NULL PRIMARY KEY,
     full_date DATE NOT NULL,
