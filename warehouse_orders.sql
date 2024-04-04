@@ -28,7 +28,6 @@ CREATE TABLE dim_ship_mode (
     ship_Mode VARCHAR(255) NULL,
     timestamp datetime
 );
-
 CREATE TABLE dim_date (
     date_key INT NOT NULL PRIMARY KEY,
     full_date DATE NOT NULL,
@@ -47,6 +46,7 @@ CREATE TABLE dim_date (
     last_day_in_month INT NOT NULL
 );
 
+-- tabla de hechos para el data warehouse
 CREATE TABLE fact_orders (
     order_id VARCHAR(255) NOT NULL,
     order_date INT NOT NULL,
