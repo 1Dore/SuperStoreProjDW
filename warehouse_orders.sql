@@ -1,3 +1,7 @@
+create database superstore;
+
+use superstore;
+
 CREATE TABLE dim_product (
     sk_product INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_id VARCHAR (255) NULL,
