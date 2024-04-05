@@ -1,9 +1,14 @@
+create database superstore;
+
+use superstore;
+
 CREATE TABLE dim_product (
     sk_product INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_id VARCHAR (255) NULL,
     product_name VARCHAR(255) NULL,
     category VARCHAR(255) NULL,
-    sub_category VARCHAR(255) NULL
+    sub_category VARCHAR(255) NULL,
+    timestamp datetime
 );
 
 CREATE TABLE dim_country (
@@ -43,7 +48,7 @@ CREATE TABLE dim_date (
     fiscal_month INT NOT NULL,
     fiscal_quarter INT NOT NULL,
     fiscal_year INT NOT NULL,
-    last_day_in_month INT NOT NULL
+    month_end_flag varchar(11) NOT NULL
 );
 
 -- tabla de hechos para el data warehouse
@@ -59,8 +64,6 @@ CREATE TABLE fact_orders (
     quantity INT NULL,
     discount DECIMAL(18, 2) NULL,
     profit DECIMAL(18, 2) NULL,
-    PRIMARY KEY (order_id, order_date, sk_customer, sk_country_code,
-    sk_ship_mode, sk_product),
     foreign key (order_date) references dim_date(date_key),
     foreign key (ship_date) REFERENCES dim_date(date_key),
     foreign key (sk_ship_mode) REFERENCES dim_ship_mode(sk_ship_mode),
