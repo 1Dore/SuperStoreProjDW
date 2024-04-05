@@ -47,7 +47,7 @@ CREATE TABLE dim_date (
     fiscal_month INT NOT NULL,
     fiscal_quarter INT NOT NULL,
     fiscal_year INT NOT NULL,
-    last_day_in_month INT NOT NULL
+    month_end_flag varchar(11) NOT NULL
 );
 
 -- tabla de hechos para el data warehouse
