@@ -64,8 +64,6 @@ CREATE TABLE fact_orders (
     quantity INT NULL,
     discount DECIMAL(18, 2) NULL,
     profit DECIMAL(18, 2) NULL,
-    PRIMARY KEY (order_id, order_date, sk_customer, sk_country_code,
-    sk_ship_mode, sk_product),
     foreign key (order_date) references dim_date(date_key),
     foreign key (ship_date) REFERENCES dim_date(date_key),
     foreign key (sk_ship_mode) REFERENCES dim_ship_mode(sk_ship_mode),
