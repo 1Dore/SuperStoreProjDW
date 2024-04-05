@@ -7,7 +7,8 @@ CREATE TABLE dim_product (
     product_id VARCHAR (255) NULL,
     product_name VARCHAR(255) NULL,
     category VARCHAR(255) NULL,
-    sub_category VARCHAR(255) NULL
+    sub_category VARCHAR(255) NULL,
+    timestamp datetime
 );
 
 CREATE TABLE dim_country (
